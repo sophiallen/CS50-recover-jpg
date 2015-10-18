@@ -1,0 +1,23 @@
+0.  TODO
+1.  TODO
+2.  TODO
+3.  TODO
+4.  TODO
+5.  
+6.  Stdint.h is a library that lets you use int8_t and the like, which helps specify the size of data types you are defining. 
+7.  The point of using int8_t and the like lets you control the number of bits/bytes that the int you're defining can/will hold.
+8.  Sizes (in bytes, assuming 32-bit processor)
+        A byte is: 8
+        a dword is: 32
+        a long is:32 
+        a word is:16
+9.  The first two bytes, the type, must be BM.
+10. Bf is the size in bytes of the file, bi is the number of bytes required for the structure. //not sure what they mean by structure here...
+11.BiHeight specifies the height (and direction) of the bmp. Positive means it starts from the bottom left and goes up, negative means it starts from the top left and goes down. 
+12.BiBitCount defines the color depth, or bits per pixel (aka how many colors are represented).
+13.  Line 37 might return null if there is not enough memory available to create a new file. 
+14. the third line of fread is always one in this code because we're only taking in one source of data to be read (and later copied)
+15. if biWidth is 3, then  (4 - (3 * sizeof(RGBTRIPLE)) % 4) % 4; -> (4-9%4)%4 -> (4-1)%4 -> padding = 3
+16. in Copy.h, fseek offsets the position of the file as measured by the current position by the size of the padding. in other words, it skips over copying the padding (i think)
+17. seek_cur is the current position indicator, where the program is within the file. 
+18. TODO
